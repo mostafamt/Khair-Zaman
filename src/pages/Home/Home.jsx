@@ -21,6 +21,8 @@ const Home = () => {
                 sx={{
                   ".MuiFormControlLabel-label": {
                     fontFamily: "Noto Kufi Arabic",
+                    fontWeight: 700,
+                    fontSize: "0.8rem",
                   },
                 }}
               />
