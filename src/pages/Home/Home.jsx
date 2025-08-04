@@ -14,19 +14,23 @@ const Home = () => {
         <div key={item.id} className={styles.group}>
           <h3>{item.label}</h3>
           {item?.children?.map((item) => (
-            <FormGroup key={item.id}>
-              <FormControlLabel
-                control={<Checkbox />}
-                label={item.label}
-                sx={{
-                  ".MuiFormControlLabel-label": {
-                    fontFamily: "Noto Kufi Arabic",
-                    fontWeight: 700,
-                    fontSize: "0.8rem",
-                  },
-                }}
-              />
-            </FormGroup>
+            <div key={item.id} className={styles.row}>
+              <FormGroup className={styles.header}>
+                <FormControlLabel
+                  control={<Checkbox />}
+                  label={item.label}
+                  sx={{
+                    ".MuiFormControlLabel-label": {
+                      fontFamily: "Noto Kufi Arabic",
+                      fontWeight: 700,
+                      fontSize: "0.8rem",
+                    },
+                  }}
+                />
+              </FormGroup>
+
+              <div>{item.price} جنيه</div>
+            </div>
           ))}
         </div>
       ))}
