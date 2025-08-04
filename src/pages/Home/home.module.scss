@@ -9,3 +9,12 @@
         }
     }
 }
+
+.submit {
+    text-align: center;
+    & button {
+        margin: 2rem 0 4rem;
+        font-family: "Noto Kufi Arabic";
+        font-weight: 600;
+    }
+}

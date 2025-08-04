@@ -4,36 +4,44 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { data } from "../../server/data";
+import { Button } from "@mui/material";
 
 import styles from "./home.module.scss";
 
 const Home = () => {
   return (
     <Container maxWidth="sm">
-      {data.map((item) => (
-        <div key={item.id} className={styles.group}>
-          <h3>{item.label}</h3>
-          {item?.children?.map((item) => (
-            <div key={item.id} className={styles.row}>
-              <FormGroup className={styles.header}>
-                <FormControlLabel
-                  control={<Checkbox />}
-                  label={item.label}
-                  sx={{
-                    ".MuiFormControlLabel-label": {
-                      fontFamily: "Noto Kufi Arabic",
-                      fontWeight: 700,
-                      fontSize: "0.8rem",
-                    },
-                  }}
-                />
-              </FormGroup>
+      <form>
+        {data.map((item) => (
+          <div key={item.id} className={styles.group}>
+            <h3>{item.label}</h3>
+            {item?.children?.map((item) => (
+              <div key={item.id} className={styles.row}>
+                <FormGroup className={styles.header}>
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label={item.label}
+                    sx={{
+                      ".MuiFormControlLabel-label": {
+                        fontFamily: "Noto Kufi Arabic",
+                        fontWeight: 700,
+                        fontSize: "0.8rem",
+                      },
+                    }}
+                  />
+                </FormGroup>
 
-              <div>{item.price} جنيه</div>
-            </div>
-          ))}
+                <div>{item.price} جنيه</div>
+              </div>
+            ))}
+          </div>
+        ))}
+        <div className={styles.submit}>
+          <Button variant="contained" type="submit">
+            إطلب الآن
+          </Button>
         </div>
-      ))}
+      </form>
     </Container>
   );
 };
