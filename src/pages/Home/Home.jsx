@@ -1,30 +1,20 @@
 import React from "react";
 import Container from "@mui/material/Container";
+import { data } from "../../server/data";
 
 const Home = () => {
   return (
     <Container maxWidth="sm">
-      <div>
-        <h3>البيتزا الشرقي</h3>
-      </div>
-      <div>
-        <h3>البيتزا الايطالي</h3>
-      </div>
-      <div>
-        <h3>الفطير الحادق</h3>
-      </div>
-      <div>
-        <h3>حواوشي</h3>
-      </div>
-      <div>
-        <h3>الصاروخ</h3>
-      </div>
-      <div>
-        <h3>الفطائر</h3>
-      </div>
-      <div>
-        <h3>الفطير الحلو</h3>
-      </div>
+      {data.map((item) => (
+        <div key={item.id}>
+          <h3>{item.label}</h3>
+          {item?.children?.map((item) => (
+            <div key={item.key}>
+              <h6>{item.label}</h6>
+            </div>
+          ))}
+        </div>
+      ))}
     </Container>
   );
 };
