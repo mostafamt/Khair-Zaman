@@ -15,7 +15,15 @@ const Home = () => {
           <h3>{item.label}</h3>
           {item?.children?.map((item) => (
             <FormGroup key={item.id}>
-              <FormControlLabel control={<Checkbox />} label={item.label} />
+              <FormControlLabel
+                control={<Checkbox />}
+                label={item.label}
+                sx={{
+                  ".MuiFormControlLabel-label": {
+                    fontFamily: "Noto Kufi Arabic",
+                  },
+                }}
+              />
             </FormGroup>
           ))}
         </div>
