@@ -246,3 +246,13 @@ export const sumOfItems = (order) => {
   });
   return sum;
 };
+
+export const totalOfItems = (order) => {
+  let total = 0;
+  order.forEach((category) => {
+    category?.children?.forEach((item) => {
+      total += item.checked ? item.price * item.count : 0;
+    });
+  });
+  return total;
+};

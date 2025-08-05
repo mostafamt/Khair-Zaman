@@ -3,6 +3,7 @@ import { Container, Button } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import styles from "./orderConfirm.module.scss";
+import { totalOfItems } from "../../server/menu";
 
 const OrderConfirm = () => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const OrderConfirm = () => {
           return category?.children?.map((item) => {
             if (item.checked) {
               return (
-                <div className={styles.row}>
+                <div key={item.id} className={styles.row}>
                   <span>{item.label}</span>
                   <span>{item.count}</span>
                   <span>{item.count * item.price}</span>
@@ -34,7 +35,9 @@ const OrderConfirm = () => {
         })}
         <div className={styles.total}>
           <div className={styles.line}></div>
-          <div className={styles.text}>الإجمالي: 50 جنيه</div>
+          <div className={styles.text}>
+            الإجمالي: {totalOfItems(order)} جنيه
+          </div>
         </div>
 
         <div className={styles.confirm}>

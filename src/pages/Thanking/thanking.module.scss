@@ -1,0 +1,16 @@
+.thanking {
+    margin: 2rem 0;
+
+    & .row {
+        display: flex;
+        justify-content: space-between;
+    
+        & > span:first-child {
+          flex: 0 1 50%;
+        }
+    
+        & > span:nth-child(2) {
+          flex: 0 1 20%;
+        }
+      }
+}

@@ -9,9 +9,9 @@ const OrderDetails = () => {
   const navigate = useNavigate();
   const order = location.state;
 
-  const [name, setName] = React.useState();
-  const [phone, setPhone] = React.useState();
-  const [address, setAddress] = React.useState();
+  const [name, setName] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [address, setAddress] = React.useState("");
 
   const onChangeName = (e) => {
     setName(e.target.value);
@@ -27,7 +27,7 @@ const OrderDetails = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    navigate("/thank-you", { state: order, name, phone, address });
+    navigate("/thank-you", { state: { order, name, phone, address } });
   };
 
   return (

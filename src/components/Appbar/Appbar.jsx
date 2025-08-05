@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const Appbar = () => {
   return (
@@ -23,9 +24,11 @@ const Appbar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Khair Zaman
-            </Typography>
+            <Link to={"/"} style={{ textDecoration: "none", color: "#fff" }}>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                Khair Zaman
+              </Typography>
+            </Link>
           </Toolbar>
         </Container>
       </AppBar>
