@@ -4,6 +4,7 @@ import About from "./pages/About/About";
 import "./App.css";
 import Rtl from "./components/Rtl/Rtl";
 import Appbar from "./components/Appbar/Appbar";
+import OrderConfirm from "./pages/OrderConfirm/OrderConfirm";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Appbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/order-confirmation" element={<OrderConfirm />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>

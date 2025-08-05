@@ -1,20 +1,23 @@
-.group {
+.form {
     margin: 2rem 0;
-
+  
+  & .group {
+    margin: 2rem 0;
     & .row {
-        display: flex;
+      display: flex;
 
-        & .header {
-            flex: 0 1 50%;
-        }
+      & .header {
+        flex: 0 1 50%;
+      }
     }
-}
+  }
 
-.submit {
+  & .submit {
     text-align: center;
     & button {
-        margin: 2rem 0 4rem;
-        font-family: "Noto Kufi Arabic";
-        font-weight: 600;
+      margin: 2rem 0 4rem;
+      font-family: "Noto Kufi Arabic";
+      font-weight: 600;
     }
+  }
 }
