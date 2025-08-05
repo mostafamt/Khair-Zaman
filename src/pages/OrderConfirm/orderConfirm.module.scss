@@ -1,0 +1,39 @@
+.order-confirm {
+  margin: 2rem 0;
+  & .row {
+    display: flex;
+    justify-content: space-between;
+
+    & > span:first-child {
+      flex: 0 1 50%;
+    }
+
+    & > span:nth-child(2) {
+      flex: 0 1 20%;
+    }
+  }
+
+  & .total {
+    margin: 2rem 0;
+
+    & .line {
+      margin: 2rem 0 1rem;
+      height: 2px;
+      background-color: #ccc;
+    }
+
+    & .text {
+      text-align: left;
+    }
+  }
+
+  & .confirm {
+    text-align: center;
+
+    & button {
+      margin: 2rem 0 4rem;
+      font-family: "Noto Kufi Arabic";
+      font-weight: 600;
+    }
+  }
+}

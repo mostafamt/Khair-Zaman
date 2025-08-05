@@ -5,6 +5,8 @@ import "./App.css";
 import Rtl from "./components/Rtl/Rtl";
 import Appbar from "./components/Appbar/Appbar";
 import OrderConfirm from "./pages/OrderConfirm/OrderConfirm";
+import OrderDetails from "./pages/OrderDetails/OrderDetails";
+import Thanking from "./pages/Thanking/Thanking";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/order-confirmation" element={<OrderConfirm />} />
+          <Route path="/order-details" element={<OrderDetails />} />
+          <Route path="/thank-you" element={<Thanking />} />
           <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
