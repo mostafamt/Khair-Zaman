@@ -1,5 +1,10 @@
-.order-details {
+.order-form {
   margin: 2rem 0;
+
+  & > h6 {
+    margin: 1rem 0;
+
+  }
 
   & .submit {
     text-align: center;

@@ -1,23 +1,19 @@
 import React from "react";
-import { Container, Button } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Container, Button, Grid, TextField } from "@mui/material";
+import { useLocation } from "react-router-dom";
+
+import { totalOfItems } from "../../server/menu";
+import OrderForm from "../../components/OrderForm/OrderForm";
 
 import styles from "./orderConfirm.module.scss";
-import { totalOfItems } from "../../server/menu";
 
 const OrderConfirm = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const order = location.state;
-
-  const onSubmit = (event) => {
-    event.preventDefault();
-    navigate("/order-details", { state: order });
-  };
 
   return (
     <Container maxWidth="sm">
-      <form className={styles["order-confirm"]} onSubmit={onSubmit}>
+      <div className={styles["order-confirm"]}>
         {order?.map((category) => {
           return category?.children?.map((item) => {
             if (item.checked) {
@@ -29,7 +25,7 @@ const OrderConfirm = () => {
                 </div>
               );
             } else {
-              return <></>;
+              return <div key={item.id}></div>;
             }
           });
         })}
@@ -39,13 +35,9 @@ const OrderConfirm = () => {
             الإجمالي: {totalOfItems(order)} جنيه
           </div>
         </div>
+      </div>
 
-        <div className={styles.confirm}>
-          <Button variant="contained" type="submit">
-            تأكيد
-          </Button>
-        </div>
-      </form>
+      <OrderForm order={order} />
     </Container>
   );
 };
