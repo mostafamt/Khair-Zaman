@@ -6,7 +6,11 @@ import styles from "./orderForm.module.scss";
 import { useNavigate } from "react-router-dom";
 
 const OrderForm = (props) => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
@@ -32,7 +36,9 @@ const OrderForm = (props) => {
               label="الاسم"
               variant="outlined"
               fullWidth
-              {...register("name", { required: true })}
+              {...register("name", { required: "الاسم مطلوب" })}
+              error={!!errors.name} // ✅ conditionally set error
+              helperText={errors.name?.message} // ✅ show error text
             />
           </Grid>
           <Grid size={6}>
@@ -41,7 +47,9 @@ const OrderForm = (props) => {
               label="رقم الهاتف"
               variant="outlined"
               fullWidth
-              {...register("phone", { required: true })}
+              {...register("phone", { required: "رقم الهاتف مطلوب" })}
+              error={!!errors.phone} // ✅ conditionally set error
+              helperText={errors.phone?.message} // ✅ show error text
             />
           </Grid>
           <Grid size={6}>
@@ -50,7 +58,9 @@ const OrderForm = (props) => {
               label="العنوان"
               variant="outlined"
               fullWidth
-              {...register("address", { required: true })}
+              {...register("address", { required: "العنوان مطلوب" })}
+              error={!!errors.address} // ✅ conditionally set error
+              helperText={errors.address?.message} // ✅ show error text
             />
           </Grid>
         </Grid>

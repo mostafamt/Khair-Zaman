@@ -1,6 +1,14 @@
 .thanking {
     margin: 2rem 0;
 
+    & > p:first-child {
+      margin-bottom: 2rem;
+    }
+
+    & > div {
+      margin-top: 2rem;
+    }
+
     & .row {
         display: flex;
         justify-content: space-between;
